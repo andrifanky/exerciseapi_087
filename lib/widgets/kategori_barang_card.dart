@@ -1,12 +1,14 @@
 part of 'widget.dart';
 
 class KategoriBarangCard extends StatelessWidget {
-  const KategoriBarangCard({
+  KategoriBarangCard({
     super.key,
     required this.kategoriBarang
   });
 
   final KategoriBarangModel kategoriBarang;
+
+  final kategoriBarangController = KategoriBarangController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,6 +38,7 @@ class KategoriBarangCard extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {
+                  deleteDialog(kategoriBarang, context);
                 },
                 padding: EdgeInsets.zero,
                 icon: const Icon(Icons.delete_rounded, color: Colors.red)
@@ -44,6 +47,38 @@ class KategoriBarangCard extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  deleteDialog(KategoriBarangModel kategoriBarang, BuildContext context) {
+    return showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          title: const Text('Hapus Kategori Barang'),
+          content: const  Text('Apakah anda yakin?'),
+          actions: [
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text('BATAL')
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                kategoriBarangController.deleteKategoriBarang(kategoriBarang.id!);
+
+                const snackBar = SnackBar(
+                  content: Text('Kategori barang berhasil dihapus')
+                );
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              },
+              child: const Text('YA', style: TextStyle(color: Colors.red))
+            ),
+          ],
+        );
+      }
     );
   }
 }
