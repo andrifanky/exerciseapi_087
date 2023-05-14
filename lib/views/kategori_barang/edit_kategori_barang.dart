@@ -30,8 +30,8 @@ class _EditKategoriBarangState extends State<EditKategoriBarang> {
   }
 
   updateKategoriBarang() async {
-    // KategoriBarangModel kategoriBarang = KategoriBarangModel(nama: _namaController.text);
-    // await kategoriBarangController.updateKategoriBarang(kategoriBarang);
+    KategoriBarangModel kategoriBarang = KategoriBarangModel(id: widget.kategoriBarang.id, nama: _namaController.text);
+    await kategoriBarangController.updateKategoriBarang(kategoriBarang);
   }
 
   @override
