@@ -38,6 +38,7 @@ class _KategoriBarangState extends State<KategoriBarang> {
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (context) => const AddKategoriBarang()));
         },
+        tooltip: 'Tambah Kategori Barang',
         child: const Icon(Icons.add_rounded),
       ),
     );
