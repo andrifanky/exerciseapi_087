@@ -19,8 +19,6 @@ class KategoriBarangCard extends StatelessWidget {
           padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 16),
           child: Row(
             children: [
-              const Icon(Icons.check_box_outline_blank_rounded),
-              const SizedBox(width: 10),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
