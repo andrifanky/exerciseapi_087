@@ -34,6 +34,7 @@ class KategoriBarangCard extends StatelessWidget {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => EditKategoriBarang(kategoriBarang: kategoriBarang)));
                 },
                 padding: EdgeInsets.zero,
+                tooltip: 'Edit Kategori Barang',
                 icon: const Icon(Icons.edit_rounded, color: Colors.blue)
               ),
               IconButton(
@@ -41,6 +42,7 @@ class KategoriBarangCard extends StatelessWidget {
                   deleteDialog(kategoriBarang, context);
                 },
                 padding: EdgeInsets.zero,
+                tooltip: 'Hapus Kategori Barang',
                 icon: const Icon(Icons.delete_rounded, color: Colors.red)
               ),
             ],
