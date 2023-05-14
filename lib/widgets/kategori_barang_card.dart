@@ -31,6 +31,7 @@ class KategoriBarangCard extends StatelessWidget {
               ),
               IconButton(
                 onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => EditKategoriBarang(kategoriBarang: kategoriBarang)));
                 },
                 padding: EdgeInsets.zero,
                 icon: const Icon(Icons.edit_rounded, color: Colors.blue)
